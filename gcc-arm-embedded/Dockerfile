@@ -9,11 +9,10 @@ RUN apt-get update && apt-get install -y make \
   python-software-properties
 
 # arm-none-eabi toolchain
-RUN add-apt-repository ppa:terry.guo/gcc-arm-embedded && \
+RUN add-apt-repository ppa:team-gcc-arm-embedded/ppa && \
   apt-get update && \
-  apt-get install -y gcc-arm-none-eabi
+  apt-get install -y gcc-arm-embedded
 
 # Cleanup
 RUN apt-get clean && \
   rm -rf /var/lib/apt
-
